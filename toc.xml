@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Addon Author="Tsulong" APIVersion="11" Name="Cupcake" Description="Cupcake Chat! Keep you connected to your realms Global Chat Channels, just a tool to help ease the process for new guys!">
+<Addon Author="Tsulong" APIVersion="11" Name="Cupcake" Description="Cupcake Chat! Keep you connected to your realms Global Chat Channels, just a tool to help ease the process for new guys!" Version="">
     <Script Name="Cupcake.lua"/>
     <Form Name="Cupcake.xml"/>
 </Addon>

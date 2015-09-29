@@ -53,7 +53,7 @@ local tServerChannelLists						= {}
 	tServerChannelLists.Luminai 				= {}
 	tServerChannelLists.Luminai.Exile 		= {}
 	tServerChannelLists.Luminai.Exile.LFG 	= "Lfg"
-	--tServerChannelLists.Luminai.Exile.GEN 	= "General"
+	tServerChannelLists.Luminai.Exile.GEN 	= "General"
 	tServerChannelLists.Luminai.Dominion 		= {}
 	tServerChannelLists.Luminai.Dominion.LFG 	= "Lfg"
 	tServerChannelLists.Luminai.Dominion.GEN 	= "General"
@@ -161,7 +161,7 @@ end
 function Cupcake:OnCupcakeOn()
 self:DoChannelUpdate()
 	self.wndMain:Invoke() -- show the window
-	SendVarToRover("tSettings",tSettings)
+--	SendVarToRover("tSettings",tSettings)
 end
 
 function Cupcake:SetupCheckboxes()
@@ -191,6 +191,8 @@ local strForChannelName = ""
  self.ChatChannels = ChatSystemLib.GetChannels()
 	for key, value in pairs(self.ChatChannels) do
 		strForChannelName = value:GetName()
+	
+	--	if strForChannelName
 		if self.iMyFaction == tExile then
 			if strForChannelName:lower() == string.lower(tServerChannelLists[self.strMyRealm].Exile.LFG) then
 				self.bConnectedToLFG = "true"
@@ -200,10 +202,10 @@ local strForChannelName = ""
 				self.genSlashCommand = value:GetCommand()
 			end
 		elseif self.iMyFaction == tDominion then
-			if strForChannelName.lower() == string.lower(tServerChannelLists[self.strMyRealm].Dominion.LFG) then
+			if strForChannelName:lower() == string.lower(tServerChannelLists[self.strMyRealm].Dominion.LFG) then
 				self.bConnectedToLFG = "true"
 				self.lfgSlashCommand = "/".. value:GetCommand()
-			elseif strForChannelName.lower() == string.lower(tServerChannelLists[self.strMyRealm].Dominion.GEN) then
+			elseif strForChannelName:lower() == string.lower(tServerChannelLists[self.strMyRealm].Dominion.GEN) then
 				self.bConnectedToGEN = "true"
 				self.genSlashCommand = value:GetCommand()
 			end
